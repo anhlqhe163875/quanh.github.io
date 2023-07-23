@@ -1,0 +1,7 @@
+<zk>
+	<window>
+		<div apply="org.example.Controller.indexController">
+			<button id="orderBtn" label="TroubleShoot" autodisable="self" />
+		</div>
+	</window>
+</zk>

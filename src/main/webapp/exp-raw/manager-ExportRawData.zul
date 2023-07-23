@@ -1,0 +1,41 @@
+<zk>
+    <splitlayout  vflex="1" hflex="1" >
+        <div sclass="area" vflex="1">
+            <textbox id="Filter" ></textbox>
+
+            <button label="1">Template</button>
+
+            <button label="2">Refresh</button>
+            <div apply="org.example.Controller.exportController">
+                <button id="btnexprot">Export</button>
+            </div>
+
+
+        </div>
+        <div sclass="area" vflex="2">
+
+            <grid>
+                <columns>
+                    <column label="#"></column>
+                    <column label="File name"></column>
+                    <column label="From"></column>
+                    <column label="To"></column>
+                    <column label="Creaeted table"></column>
+                    <column label="Exprot by"></column>
+                    <column label="Download"></column>
+                </columns>
+                <rows>
+                    <row>
+                        <label>1</label>
+                        <label>optical_data</label>
+                        <label>2030-06-12 09:00:00</label>
+                        <label>2023-06-20 09:00:00</label>
+                        <label>2023-06-30 17:05:00</label>
+                        <label>tanhv</label>
+                        <a><label>link</label></a>
+                    </row>
+                </rows>
+            </grid>
+        </div>
+    </splitlayout>
+</zk>
