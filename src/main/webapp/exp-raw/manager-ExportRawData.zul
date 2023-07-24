@@ -1,18 +1,15 @@
 <zk>
     <splitlayout  vflex="1" hflex="1" >
-        <div sclass="area" vflex="1">
-            <textbox id="Filter" ></textbox>
+        <div sclass="area" vflex="1" apply="com.zikay.controller.exportController" >
+            <textbox id="Filter"  width="500px"></textbox>
 
             <button label="1">Template</button>
 
             <button label="2">Refresh</button>
-            <div apply="org.example.Controller.exportController">
-                <button id="btnexprot">Export</button>
-            </div>
-
-
+            
+            <button id="btnexprot">Export</button>
         </div>
-        <div sclass="area" vflex="2">
+        <div sclass="area" vflex="10">
 
             <grid>
                 <columns>
