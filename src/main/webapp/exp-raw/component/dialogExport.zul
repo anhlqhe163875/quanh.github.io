@@ -1,11 +1,130 @@
 <zk>
-    <window id="modelDialog" title="ExportData" border="normal" width="80%"
-            apply="" position="center,center" closable="true">
-        <vlayout>
+	<window id="modelDialog" title="ExportData" border="normal"
+		width="80%" apply="" position="center,center" closable="true">
+		<vlayout>
+			<tabbox>
+				<tabs>
+					<tab label="Time" />
+					<tab label="Export Field" />
+				</tabs>
+				<tabpanels>
+					<tabpanel>
+						<div apply="org.zkoss.bind.BindComposer"
+							viewModel="@id('vm') @init('com.zikay.viewmodel.AlarFreqViewModel')"
+							hflex="1">
+						</div>
+						<div>
+							Site(*)
+							<listbox width="200px" mold="select"
+								style="margin-left: 50px;">
+								<listitem label="SUM" />
+								<listitem label="AVG" />
+							</listbox>
+
+							<label value="Duration(*)"	style="margin-left: 300px;" />
+							<listbox width="200px" mold="select"
+								style="margin-left: 100px;">
+								<listitem label="SUM" />
+								<listitem label="AVG" />
+							</listbox>
+						</div>
+						<div>
+							<label value="From date(*)" />
+							<datebox id="fromDate" format="yyyy/MM/dd" />
+							<label value="To date(*)"
+								style="margin-right: 50px; margin-left: 10px;" />
+							<datebox id="toDate" format="yyyy/MM/dd" />
+						</div>
+						<div>
+							Location
+							<textbox width="500px"></textbox>
+							<button>...</button>
+						</div>
+						<div>
+							ONU
+							<textbox width="500px" height="200px"></textbox>
+						</div>
+						<div>
+							<button>Close</button>
+							<button>Export</button>
+						</div>
 
 
+					</tabpanel>
 
-        </vlayout>
-    </window>
+
+					<tabpanel apply="org.zkoss.bind.BindComposer"
+						viewModel="@id('vm') @init('com.zikay.viewmodel.AlarFreqViewModel')">
+						<div style="padding-bottom : 10px">
+							Export field(*)
+
+							<textbox width="500px"></textbox>
+
+							<button>Add</button>
+
+							Records limit
+
+							<textbox width="100px"></textbox>
+						</div>
+
+						<listbox model="@load(vm.alarmList)" rows="7">
+							<listhead sizable="true">
+								<listheader label="#" />
+								<listheader label="Field" />
+								<listheader label="Table" />
+								<listheader label="Aggregation" />
+								<listheader label="Group by" />
+								<listheader label="Filter" />
+								<listheader label="Display Name" />
+								<listheader label="Action" />
+								<listheader label="Remove" />
+							</listhead>
+
+							<template name="model">
+								<listitem>
+									<listcell label="@load(each.id)" />
+									<listcell
+										label="@load(each.severity)" />
+									<listcell label="@load(each.nE)" />
+									<listcell>
+										<listbox mold="select">
+											<listitem label="SUM" />
+											<listitem label="AVG" />
+										</listbox>
+									</listcell>
+
+									<listcell>
+										<listbox mold="select">
+											<listitem label="SUM" />
+											<listitem label="AVG" />
+										</listbox>
+									</listcell>
+
+									<listcell>
+										<textbox />
+									</listcell>
+
+									<listcell>
+										<textbox />
+									</listcell>
+
+									<listcell>
+										<a>up</a>
+										<a>down</a>
+									</listcell>
+
+									<listcell>
+										<a>Remove</a>
+									</listcell>
+
+								</listitem>
+							</template>
+						</listbox>
+					</tabpanel>
+				</tabpanels>
+			</tabbox>
+
+
+		</vlayout>
+	</window>
 </zk>
-
